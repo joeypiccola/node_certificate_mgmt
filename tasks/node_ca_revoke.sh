@@ -26,3 +26,17 @@
 #   }
 # Learn more at: https://puppet.com/docs/bolt/0.x/writing_tasks.html#ariaid-title11
 #
+
+node=$PT_node
+certname=`/opt/puppetlabs/puppet/bin/puppet agent --configprint certname`
+mom=$certname     # when testing from the PE Master of Masters (locally)
+
+curl -X PUT \
+  --tlsv1 \
+  --cacert /etc/puppetlabs/puppet/ssl/certs/ca.pem \
+  --cert /etc/puppetlabs/puppet/ssl/certs/${certname}.pem \
+  --key /etc/puppetlabs/puppet/ssl/private_keys/${certname}.pem \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{"desired_state":"revoked"}' \
+  https://${mom}:8140/puppet-ca/v1/certificate_status/${node}

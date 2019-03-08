@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Puppet Task Name: deactivate_pdb_node
+# Puppet Task Name: node_ca_revoke
 #
 # This is where you put the shell code for your task.
 #
@@ -27,33 +27,16 @@
 # Learn more at: https://puppet.com/docs/bolt/0.x/writing_tasks.html#ariaid-title11
 #
 
-# tstamp=`date --iso-8601=seconds`
-# echo $tstamp
-# node=$PT_node
-# certname=`/opt/puppetlabs/puppet/bin/puppet agent --configprint certname`
-# mom=$certname     # when testing from the PE Master of Masters (locally)
-#
-# curl -X POST \
-#   --tlsv1 \
-#   --cacert /etc/puppetlabs/puppet/ssl/certs/ca.pem \
-#   --cert /etc/puppetlabs/puppet/ssl/certs/${certname}.pem \
-#   --key /etc/puppetlabs/puppet/ssl/private_keys/${certname}.pem \
-#   -H "Accept: application/json" \
-#   -H "Content-Type: application/json" \
-#   -d "{\"command\":\"deactivate node\",\"version\":3,\"payload\":{\"certname\":\"${node}\",\"producer_timestamp\":\"${tstamp}\"}}" \
-#   https://${mom}:8081/pdb/cmd/v1
-
-tstamp=`date --iso-8601=seconds`
 node=$PT_node
 certname=`/opt/puppetlabs/puppet/bin/puppet agent --configprint certname`
 mom=$certname     # when testing from the PE Master of Masters (locally)
 
-curl -X POST \
+curl -X PUT \
   --tlsv1 \
   --cacert /etc/puppetlabs/puppet/ssl/certs/ca.pem \
   --cert /etc/puppetlabs/puppet/ssl/certs/${certname}.pem \
   --key /etc/puppetlabs/puppet/ssl/private_keys/${certname}.pem \
   -H "Accept: application/json" \
   -H "Content-Type: application/json" \
-  -d "{\"command\":\"deactivate node\",\"version\":3,\"payload\":{\"certname\":\"${node}\",\"producer_timestamp\":\"${tstamp}\"}}" \
-  https://${mom}:8081/pdb/cmd/v1
+  -d '{"desired_state":"signed"}' \
+  https://${mom}:8140/puppet-ca/v1/certificate_status/${node}
