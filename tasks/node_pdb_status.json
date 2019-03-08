@@ -3,5 +3,9 @@
   "supports_noop": false,
   "description": "A short description of this task",
   "parameters": {
+    "node": {
+      "description": "The node to query in the PuppetDB.",
+      "type": "String"
+    }
   }
 }
