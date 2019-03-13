@@ -166,4 +166,4 @@ On a typical Puppet install the `puppet-ca` API uses certificate based authentic
 Thanks [Jesse Reynolds](https://github.com/jessereynolds) for the jumpstart on the `puppet-ca` `curl` commands and allowing them to be bundled in this module!
 
 ## Other Thoughts
-Interested in doing this via PowerShell? Check out [PSPuppetCertificateStatus](https://github.com/joeycontoso/PSPuppetCertificateStatus).
+Interested in doing this via PowerShell? Check out [PSPuppetCertificateStatus](https://github.com/joeypiccola/PSPuppetCertificateStatus).

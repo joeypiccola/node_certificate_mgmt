@@ -1,6 +1,6 @@
 {
   "name": "jpi-node_certificate_mgmt",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Joey Piccola",
   "summary": "Manage node certificates with a set of Puppet Tasks.",
   "license": "MIT",
