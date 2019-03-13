@@ -1,7 +1,7 @@
 {
   "puppet_task_version": 1,
   "supports_noop": false,
-  "description": "Deactivate in PuppetDB task.",
+  "description": "Deactivate a node in the pdb.",
   "parameters": {
     "node": {
       "description": "The node to deactivate in the PuppetDB.",

@@ -1,7 +1,7 @@
 {
   "puppet_task_version": 1,
   "supports_noop": false,
-  "description": "A short description of this task",
+  "description": "Delete a node's certificate.",
   "parameters": {
     "node": {
       "description": "The node to delete in the puppet-ca.",
