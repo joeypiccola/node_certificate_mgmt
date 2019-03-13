@@ -6,7 +6,8 @@ Manage node certificates with a set of Puppet Tasks.
 This module includes a set of tasks to manage Puppet node certificates. The module also includes a set of tasks to manage Puppet node pdb entries.
 
 ## Details
-The following tasks are intended to be executed on the master or some other node with the appropriate allow rules to the `/puppet-ca/v1/certificate_status/` path in `/etc/puppetlabs/puppetserver/conf.d/auth.conf`.
+- The following tasks are intended to be executed on the master or some other node with the appropriate allow rules to the `/puppet-ca/v1/certificate_status/` path in `/etc/puppetlabs/puppetserver/conf.d/auth.conf`.
+- Each task takes a node parameter for the node you wish to modify.
 
 ### Node Certificate Tasks
 The module leverages the `puppet-ca` API to get status, sign, revoke and delete node certificates.
