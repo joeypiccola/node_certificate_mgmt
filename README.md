@@ -1,5 +1,7 @@
 
 # node_certificate_mgmt
+![Build status](https://ci.appveyor.com/api/projects/status/66uwj4qx76ou0bui/branch/master?svg=true&passingText=master%20-%20PASSING&pendingText=master%20-%20PENDING&failingText=master%20-%20FAILING)
+
 Manage node certificates with a set of Puppet Tasks.
 
 ## Description
