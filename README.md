@@ -24,7 +24,7 @@ The module leverages the `pdb` API to get status and deactivate nodes.
 - `node_certificate_mgmt::node_pdb_deactivate`
 
 ## Usage
-In the spirit of automation, below are some examples for calling the `node_certificate_mgmt` tasks via the `orchestrator` API.
+These tasks can be called via the Puppet web interface. However, in the spirit of automation, below are some examples for calling the `node_certificate_mgmt` tasks via the `orchestrator` API, specifically the task `node_certificate_mgmt::node_ca_status` to view the status of a recently deployed node with an unsigned certificate.
 
 ### PowerShell
 Two API calls, one to execute the task and another to retrieve the results.
