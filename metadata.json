@@ -1,12 +1,12 @@
 {
-  "name": "jpi-puppet_cert_mgmt",
+  "name": "jpi-node_certificate_mgmt",
   "version": "0.1.0",
   "author": "Joey Piccola",
   "summary": "Manage node certificates with a set of Puppet Tasks.",
   "license": "MIT",
-  "source": "https://github.com/joeypiccola/puppet_cert_mgmt",
-  "project_page": "https://github.com/joeypiccola/puppet_cert_mgmt",
-  "issues_url": "https://github.com/joeypiccola/puppet_cert_mgmt/issues",
+  "source": "https://github.com/joeypiccola/node_certificate_mgmt",
+  "project_page": "https://github.com/joeypiccola/node_certificate_mgmt",
+  "issues_url": "https://github.com/joeypiccola/node_certificate_mgmt/issues",
   "dependencies": [
 
   ],
